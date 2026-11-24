@@ -7,7 +7,7 @@
   </div>
 </section>
 <section class="ark-benchmarks" id="ark-performance" aria-labelledby="ark-performance-title">
-  <div class="ark-eyebrow">ENGINE PERFORMANCE · OCTOBER 2026 SNAPSHOT</div>
+  <div class="ark-eyebrow">ENGINE PERFORMANCE · OCT–NOV 2026</div>
   <h2 id="ark-performance-title">The numbers.</h2>
   <div class="ark-metrics">
     <div class="ark-metric">
@@ -17,10 +17,10 @@
       <div class="ark-condition">RTX 5070 Ti · 8–16 concurrent chats<br>17 October 2026</div>
     </div>
     <div class="ark-metric">
-      <div class="ark-value">114<span>ms</span></div>
-      <h3>to the first token</h3>
-      <p>vs 160 ms with llama.cpp</p>
-      <div class="ark-condition">Apple M5, 24 GB · 52-token prompt<br>9 October 2026</div>
+      <div class="ark-value">2.6<span>×</span></div>
+      <h3>the throughput of Ollama</h3>
+      <p>with 8 chats; Ollama runs this model one chat at a time</p>
+      <div class="ark-condition">Apple M5, 24 GB · Qwen 3.5 35B<br>1 November 2026</div>
     </div>
   </div>
   <details class="ark-conditions" open>
@@ -28,7 +28,9 @@
     <div class="ark-result-row"><span>RTX 5070 Ti · 8–16 chats · throughput vs llama.cpp</span><strong>+12.7–15.1%</strong></div>
     <div class="ark-result-row"><span>RTX 5070 Ti · one chat · first token vs Ollama</span><strong>2–2.5× slower</strong></div>
     <div class="ark-result-row"><span>Apple M5 · 4 chats · throughput vs llama.cpp</span><strong>−3.8%</strong></div>
-    <p class="ark-data-note">Figures transcribed from the October ledger; different machines and workloads.</p>
+    <div class="ark-result-row"><span>Apple M5 · 52-token prompt · first token vs llama.cpp</span><strong>114 vs 160 ms</strong></div>
+    <div class="ark-result-row"><span>Apple M5 · Qwen 3.5 35B · 1–8 chats · throughput vs MLX</span><strong>−15 to −34%</strong></div>
+    <p class="ark-data-note">Figures from the ledger; different machines, models and workloads.</p>
   </details>
   <a class="ark-more" href="research.html#ledger">The full ledger, losses included</a>
 </section>

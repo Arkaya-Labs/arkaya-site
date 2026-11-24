@@ -22,6 +22,10 @@ ENGINE = [
     ("17 Oct 2026", "Aggregate tokens/s, 8 and 16 chats", "Ollama 0.40.1", "RTX 5070 Ti", 20, 49, "+20 to +49 %", "20 % to 49 % more tokens per second at 8 and 16 chats."),
     ("23 Oct 2026", "Aggregate tokens/s, 4, 8 and 16 chats", "vLLM, AWQ weights", "RTX 5070 Ti", -5.9, -16.8, "−5.9 to −16.8 %", "−16.8 % at 4 chats, −10.5 % at 8, −5.9 % at 16: the gap closes as concurrency rises."),
     ("23 Oct 2026", "Time to first token, p50", "vLLM, AWQ weights", "RTX 5070 Ti", 31, 31, "up to 31 % lower", "Median time to first token up to 31 % lower."),
+    ("1 Nov 2026", "Total tokens/s, 1 to 8 chats, Qwen 3.5 35B", "Ollama 0.40.3", "Apple M5, 24 GB", 13.3, 160, "+13 % to 2.6×",
+     "56 against 50 tokens per second with one chat, 123 against 47 with eight. Ollama runs this model one chat at a time, so its total stays flat. One short prompt, one run at each count."),
+    ("1 Nov 2026", "Total tokens/s, 1 to 8 chats, Qwen 3.5 35B", "MLX, its own 3-bit weights", "Apple M5, 24 GB", -15.2, -33.9, "−15 to −34 %",
+     "56 against 66 tokens per second with one chat, 123 against 160 with eight. MLX ran its own 3-bit weights, not the same file. One short prompt, one run at each count."),
 ]
 
 AGENT = [  # wrong tool chosen over 200 prompts, lower is better
@@ -94,7 +98,7 @@ def ledger():
   <div class="ark-head">
     <div class="ark-eyebrow">EVERY PUBLISHED NUMBER</div>
     <h2 id="ledger-title">The ledger.</h2>
-    <p class="lede">Against llama.cpp, Ollama and vLLM on the same model files, on machines people actually own. Losses stay in, and a number is never edited once it goes up.</p>
+    <p class="lede">Against llama.cpp, Ollama, vLLM and MLX, on machines people actually own. A row says so when the other engine ran different weights. Losses stay in, and a number is never edited once it goes up.</p>
   </div>
   <div class="lg">
     <div class="lg-group">
