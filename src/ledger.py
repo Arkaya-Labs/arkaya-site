@@ -29,9 +29,6 @@ AGENT = [  # wrong tool chosen over 200 prompts, lower is better
     ("16 Oct 2026", "Llama 3.1 8B", "Apple M5", 24.0),
 ]
 
-TUNER = ("Oct 2026", "prefill_chunk_tokens 512 → 256",
-         [("kept", "Kept", "CPU reference"), ("reverted", "Reverted every time", "RTX 3050"), ("notrun", "Not run yet", "RTX 5070 Ti")])
-
 
 def pos(v):  # percent along the track, 0..100
     v = max(-AXIS, min(AXIS, v))
@@ -80,14 +77,6 @@ def agent_rows():
     return "".join(rows)
 
 
-def tuner_row():
-    date, what, states = TUNER
-    icon = {"kept": "✓", "reverted": "↺", "notrun": "○"}
-    pills = "".join(f'<span class="lg-pill {k}"><i aria-hidden="true">{icon[k]}</i>{escape(t)}<small>{escape(m)}</small></span>' for k, t, m in states)
-    return (f'<div class="lg-tuner"><div class="lg-label"><span class="lg-what"><code>{escape(what)}</code></span>'
-            f'<span class="lg-meta">{date}</span></div><div class="lg-pills">{pills}</div></div>')
-
-
 def table():
     """The same numbers as a plain table, for anyone who wants them exactly (and for screen readers)."""
     r = ['<table><thead><tr><th>Date</th><th>Measured</th><th>Against</th><th>Result</th><th>Machine</th></tr></thead><tbody>']
@@ -95,8 +84,6 @@ def table():
         r.append(f'<tr><td>{date}</td><td>{escape(what)}</td><td>{escape(vs or "—")}</td><td>{escape(label)}</td><td>{escape(machine)}</td></tr>')
     for date, model, machine, v in AGENT:
         r.append(f'<tr><td>{date}</td><td>Wrong tool chosen, 200 prompts, {escape(model)}</td><td>—</td><td>{v:g} %</td><td>{machine}</td></tr>')
-    date, what, states = TUNER
-    r.append(f'<tr><td>{date}</td><td><code>{escape(what)}</code></td><td>—</td><td>' + "; ".join(f"{t}: {m}" for _, t, m in states) + '</td><td>CPU reference, RTX 3050</td></tr>')
     r.append('</tbody></table>')
     return "".join(r)
 
@@ -111,18 +98,16 @@ def ledger():
   </div>
   <div class="lg">
     <div class="lg-group">
-      <div class="lg-gh"><h3>vivace, the engine</h3><p>Difference from the engine named on each row. Right of centre is better for vivace.</p>
-        <div class="lg-legend"><span><i class="sw win"></i>vivace ahead</span><span><i class="sw loss"></i>vivace behind</span><span><i class="sw lead"></i>range across concurrency</span></div></div>
+      <div class="lg-gh"><h3>The Larch engine</h3><p>Difference from the engine named on each row. Right of centre is better for Larch.</p>
+        <div class="lg-legend"><span><i class="sw win"></i>Larch ahead</span><span><i class="sw loss"></i>Larch behind</span><span><i class="sw lead"></i>range across concurrency</span></div></div>
       <div class="lg-plot">{grid()}{eng}</div>
       {axis_row()}
     </div>
     <div class="lg-group">
-      <div class="lg-gh"><h3>Iris, the agent</h3><p>Wrong tool chosen over 200 prompts. Shorter is better.</p></div>
+      <div class="lg-gh"><h3>Larch, the agent</h3><p>Wrong tool chosen over 200 prompts. Shorter is better.</p></div>
       <div class="lg-plot plain">{agent_rows()}</div>
     </div>
     <div class="lg-group">
-      <div class="lg-gh"><h3>gait, the tuner</h3><p>A change is kept only when the measurement proves it.</p></div>
-      {tuner_row()}
     </div>
     <details class="lg-table"><summary>Show the numbers as a table</summary><div class="table-wrap">{table()}</div></details>
     <p class="lg-foot">The slow first token under load is the thing we are fixing first. Hover or focus a row for its full figures.</p>

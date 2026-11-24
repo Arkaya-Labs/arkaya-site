@@ -13,9 +13,9 @@ read = lambda p: open(os.path.join(HERE, p), encoding="utf-8").read()
 PAGES = {
     # file: (painting, title, description, nav key)
     "index.html": ("paro", "Arkaya Labs — Intelligence you own, not rent.",
-                   "Arkaya Labs builds efficient, advanced local AI: Iris, a personal agent, and vivace, the engine that runs it on the computer you already own.", "home"),
+                   "Arkaya Labs builds efficient, advanced local AI: Larch, a personal agent, and the engine that runs it on the computer you already own.", "home"),
     "projects.html": ("ellora", "Projects — Arkaya Labs",
-                      "vivace, Iris, strided and gait: an engine, an agent and a tuner, built in the open to run together on the computer you already own.", "projects"),
+                      "Larch and its engine: an agent and an engine, built in the open to run together on the computer you already own.", "projects"),
     "research.html": ("delphi", "Research — Arkaya Labs",
                       "What Arkaya Labs measured, how it was done and what it cost: research notes and the full benchmark ledger.", "research"),
     "about.html": ("chittor", "About — Arkaya Labs",
