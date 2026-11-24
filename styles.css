@@ -321,6 +321,7 @@ nav a { transition: color .2s ease; }
 .lede { color: var(--ark-muted); font-size: 17px; line-height: 1.6; max-width: 56ch; }
 .ark-more { display: inline-block; margin-top: 26px; color: var(--ark-green); font-size: 14px; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 .ark-benchmarks .ark-more { margin-top: 30px; }
+.ark-more + .ark-more { margin-left: 22px; }
 
 /* Products (take 9) */
 .products { display: grid; }
@@ -601,7 +602,7 @@ main { position: relative; z-index: 1; }
 }
 
 /* ── The ledger, drawn: a diverging bar per published number on one shared axis ──
-   Blue = vivace ahead, lotus pink = vivace behind (validated for colour-blind separation in both modes). Polarity is
+   Blue = Larch ahead, lotus pink = Larch behind (validated for colour-blind separation in both modes). Polarity is
    also carried by side of centre, an arrow and the written value, never by colour alone. */
 :root { --win: #1f6fb8; --loss: #b8275a; --lg-ink: color-mix(in srgb, var(--ark-ink) 70%, var(--ark-paper)); }
 :root[data-theme="dark"] { --win: #4b8fd8; --loss: #e0558a; }
@@ -645,12 +646,6 @@ main { position: relative; z-index: 1; }
 .lg-plot { --lg-left: calc(30% + 18px); --lg-right: calc(9.5em + 18px); }
 .lg-plot > .lg-grid { left: calc(var(--lg-left) + (100% - var(--lg-left) - var(--lg-right)) * var(--at)); }
 .lg-plain .lg-track, .lg-plot.plain .lg-track { background: linear-gradient(to right, color-mix(in srgb, var(--ark-ink) 55%, transparent) 0 1px, transparent 1px); }
-.lg-tuner { display: grid; grid-template-columns: minmax(0, 30%) minmax(0, 1fr); gap: 18px; align-items: center; padding: 12px 0; }
-.lg-pills { display: flex; gap: 10px; flex-wrap: wrap; }
-.lg-pill { display: inline-flex; align-items: baseline; gap: 7px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--ark-line); font-size: 13px; color: var(--ark-ink); background: color-mix(in srgb, var(--ark-paper), #fff 8%); }
-.lg-pill i { font-style: normal; font-weight: 600; }
-.lg-pill small { color: var(--ink-3); font-size: 11.5px; }
-.lg-pill.kept i { color: var(--win); } .lg-pill.reverted i { color: var(--loss); } .lg-pill.notrun i { color: var(--ink-3); }
 .lg-table { margin-top: 40px; font-size: 13px; }
 .lg-table summary { color: var(--ark-green); cursor: pointer; padding: 6px 0; font-size: 13px; }
 .lg-table table { border-collapse: collapse; width: 100%; min-width: 720px; margin-top: 10px; }
@@ -661,7 +656,7 @@ main { position: relative; z-index: 1; }
 .lg-foot { margin-top: 18px; font-size: 13px; }
 .lg-tip { position: fixed; z-index: 30; max-width: 320px; padding: 10px 12px; border-radius: 8px; font-size: 13px; line-height: 1.45; pointer-events: none;
   background: var(--ark-ink); color: var(--ark-paper); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
-.lg-gh, .lg-what, .lg-value, .lg-pill, .lg-grid, .lg-tick, .lg-bar, .lg-lead, .lg-table td, .lg-table th {
+.lg-gh, .lg-what, .lg-value, .lg-grid, .lg-tick, .lg-bar, .lg-lead, .lg-table td, .lg-table th {
   transition: color var(--dusk) var(--ease), background-color var(--dusk) var(--ease), border-color var(--dusk) var(--ease);
 }
 @media (max-width: 760px) {
@@ -672,7 +667,6 @@ main { position: relative; z-index: 1; }
   .lg-plot { --lg-left: 0px; --lg-right: calc(7.5em + 12px); }
   .lg-plot > .lg-grid { display: none; }
   .lg-gh { grid-template-columns: 1fr; } .lg-legend { grid-column: 1; grid-row: auto; justify-content: flex-start; margin-top: 8px; }
-  .lg-tuner { grid-template-columns: 1fr; }
 }
 
 /* the chart sits on a soft panel of the page colour, so the painting behind the page never runs through the bars */
@@ -756,7 +750,7 @@ main { position: relative; z-index: 1; }
    the left, four short points on what it does on the right. Built from the site's own pieces: the soft paper panel of
    the ledger, hairlines mixed from the page colour, mono labels, the gold accent and the drawn arrow. */
 .pp-glance { padding-bottom: 64px; }
-.pp-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); }
+.pp-trio { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); }
 .pp-card { position: relative; display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 2.4vw, 34px);
   border-radius: 18px; color: var(--ark-ink); text-decoration: none;
   background: color-mix(in srgb, var(--ark-paper) 90%, transparent);
