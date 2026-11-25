@@ -410,6 +410,7 @@ nav a { transition: color .2s ease; }
 /* Follow the project (Projects page; layout and form from take 9's early access) */
 .register { display: grid; grid-template-columns: minmax(0,5fr) minmax(0,7fr); gap: clamp(28px,5vw,72px); align-items: start; }
 .register h2 { font-size: clamp(38px,4.2vw,56px); }
+.register .lede { margin-top: 16px; }
 .signup { display: grid; gap: 8px; max-width: 520px; }
 .signup label { font-size: 15px; color: var(--ark-muted); }
 .signup input[type=email], .signup input[type=text] { font: inherit; font-size: 16px; padding: 10px 12px; border: 1px solid var(--ark-line); border-radius: 8px; background: var(--ark-app); color: var(--ark-ink); margin-bottom: 8px; width: 100%; }
