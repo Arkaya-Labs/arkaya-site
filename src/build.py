@@ -12,14 +12,14 @@ read = lambda p: open(os.path.join(HERE, p), encoding="utf-8").read()
 
 PAGES = {
     # file: (painting, title, description, nav key)
-    "index.html": ("paro", "Arkaya Labs — Intelligence you own, not rent.",
-                   "Arkaya Labs builds efficient, advanced local AI: Larch, a personal agent, and the engine that runs it on the computer you already own.", "home"),
-    "projects.html": ("ellora", "Projects — Arkaya Labs",
-                      "Larch and its engine: an agent and an engine, built in the open to run together on the computer you already own.", "projects"),
-    "research.html": ("delphi", "Research — Arkaya Labs",
-                      "What Arkaya Labs measured, how it was done and what it cost: research notes and the full benchmark ledger.", "research"),
-    "about.html": ("chittor", "About — Arkaya Labs",
-                 "Arkaya Labs is a small research lab building efficient, advanced local AI. Our mission: intelligence that is owned, not rented.", "about"),
+    "index.html": ("paro", "Arkaya Labs: the local AI lab behind Larch",
+                   "Arkaya Labs is a small research lab building Larch, an open-source AI engine with a built-in agent that runs on your own Mac or PC.", "home"),
+    "projects.html": ("ellora", "Larch: local AI engine with a built-in agent | Arkaya Labs",
+                      "Larch is an open-source AI engine with a built-in agent. It runs open models on Apple silicon and NVIDIA RTX GPUs. Apache 2.0.", "projects"),
+    "research.html": ("delphi", "Local LLM inference benchmarks | Arkaya Labs",
+                      "Benchmarks of Larch against llama.cpp, Ollama, MLX and vLLM on consumer GPUs and Apple silicon, including the results where Larch is slower.", "research"),
+    "about.html": ("chittor", "About Arkaya Labs",
+                 "Arkaya Labs is a small research lab that builds Larch, open-source AI software that runs on the computers people already own.", "about"),
 }
 
 # Pixel size of each painting pair (day and night are the same size). All four are this taller shape, with open sky
@@ -41,6 +41,14 @@ PAINTINGS = {
                "A painting of the Kailasa temple at Ellora, carved down into the rock of the Deccan plateau, a river winding across the plain below a soft, clouded sky",
                "The same temple under a full moon behind thin cloud, lamps lit in its halls and the river pale on the plain"),
 }
+
+CANON = {"index.html": "https://arkaya-labs.com/", "projects.html": "https://arkaya-labs.com/projects",
+         "research.html": "https://arkaya-labs.com/research", "about.html": "https://arkaya-labs.com/about"}
+ORG_LD = ('{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://arkaya-labs.com/#org",'
+          '"name":"Arkaya Labs","url":"https://arkaya-labs.com/","logo":"https://arkaya-labs.com/assets/mark.svg",'
+          '"email":"hello@arkaya-labs.com","sameAs":["https://github.com/arkaya-labs"]},'
+          '{"@type":"WebSite","@id":"https://arkaya-labs.com/#site","url":"https://arkaya-labs.com/","name":"Arkaya Labs",'
+          '"publisher":{"@id":"https://arkaya-labs.com/#org"}}]}')
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
@@ -72,8 +80,8 @@ def imprint(name):
     place = PAINTINGS[name][0]
     return ('<footer class="ark-imprint">\n'
             '  <a href="projects.html">Projects</a><a href="research.html">Research</a><a href="about.html">About</a><a href="projects.html#follow">Follow the project</a>'
-            '<a href="https://github.com/arkaya-labs">GitHub</a><a href="mailto:hello@arkaya-labs.com">hello@arkaya-labs.com</a>\n'
-            f'  <p class="fine">Copyright 2026 the Arkaya Labs authors · Nothing here is a promise; a row marked not run was not run. · Painting: {place}.</p>\n'
+            '<a href="https://larch-engine.com">Get Larch</a><a href="https://github.com/arkaya-labs">GitHub</a><a href="mailto:hello@arkaya-labs.com">hello@arkaya-labs.com</a>\n'
+            f'  <p class="fine">Copyright 2026 the Arkaya Labs authors · Painting: {place}.</p>\n'
             '</footer>')
 
 
@@ -100,6 +108,15 @@ for out, (name, title, desc, key) in PAGES.items():
 <meta name="theme-color" content="#f3ebdc">
 <meta name="description" content="{desc}">
 <title>{title}</title>
+<link rel="canonical" href="{CANON[out]}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arkaya Labs">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{CANON[out]}">
+<meta property="og:image" content="https://arkaya-labs.com/assets/og/{name}.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{ORG_LD}</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 {FONTS}
 <script src="theme.js"></script>

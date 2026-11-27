@@ -1,25 +1,23 @@
 <section class="ark-hero short" id="ark-top">
   <div class="ark-hero-main">
     <div class="ark-eyebrow">PROJECTS</div>
-    <h1>Two pieces,<br>one machine.</h1>
-    <p class="ark-intro">Larch, a personal agent, and the engine under it, built to run together on the computer you already own: no signal, no account, nothing to rent.</p>
-    <div class="ark-cta"><a class="btn" href="#follow">Follow the project<svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.2c4.4-.3 9-.3 13.8 0"/><path d="M13.6 7.4c1.4 1.9 3 3.5 4.9 4.8-1.9 1.2-3.5 2.8-4.9 4.6"/></svg></a><a class="btn ghost" href="research.html#ledger">See the numbers</a></div>
+    <h1>Larch</h1>
+    <p class="ark-intro">Larch is an AI engine with a built-in agent. It runs open models on your own computer, works offline and needs no account. It is open source under Apache 2.0.</p>
+    <div class="ark-cta"><a class="btn" href="https://larch-engine.com">Get Larch<svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.2c4.4-.3 9-.3 13.8 0"/><path d="M13.6 7.4c1.4 1.9 3 3.5 4.9 4.8-1.9 1.2-3.5 2.8-4.9 4.6"/></svg></a><a class="btn ghost" href="research.html#ledger">See the benchmarks</a></div>
   </div>
 </section>
 <section class="ark-section first pp-glance" aria-label="Larch at a glance">
   <div class="pp-trio">
     <a class="pp-card" href="#engine">
-      <span class="kind">Inference engine</span>
-      <h2>Larch engine</h2>
-      <p>Open models on the GPU you have, many conversations at once from one card.</p>
-      <span class="pp-status open">Open source 26 November · Apache 2.0</span>
+      <span class="kind">Larch</span>
+      <h2>The engine</h2>
+      <p>Runs open models on the GPU you have, many conversations at once from one card.</p>
       <span class="pp-go">The engine<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.2c4.4-.3 9-.3 13.8 0"/><path d="M13.6 7.4c1.4 1.9 3 3.5 4.9 4.8-1.9 1.2-3.5 2.8-4.9 4.6"/></svg></span>
     </a>
     <a class="pp-card" href="#agent">
-      <span class="kind">Personal agent</span>
-      <h2>Larch</h2>
+      <span class="kind">Built into Larch</span>
+      <h2>The agent</h2>
       <p>Lives on your computer, shows its sources, and asks before anything leaves it.</p>
-      <span class="pp-status preview">Preview</span>
       <span class="pp-go">The agent<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.2c4.4-.3 9-.3 13.8 0"/><path d="M13.6 7.4c1.4 1.9 3 3.5 4.9 4.8-1.9 1.2-3.5 2.8-4.9 4.6"/></svg></span>
     </a>
   </div>
@@ -27,9 +25,9 @@
 <section class="ark-section pp" id="engine" aria-labelledby="engine-title">
   <div class="pp-grid">
     <div class="pp-intro">
-      <span class="kind">Inference engine</span>
-      <h2 id="engine-title">Larch engine</h2>
-      <p class="lede">The engine. It serves open models from the GPU already on your desk, and nothing leaves the machine unless you send it.</p>
+      <span class="kind">Larch</span>
+      <h2 id="engine-title">The engine</h2>
+      <p class="lede">Serves open models from your own GPU. Nothing leaves the machine unless you send it.</p>
       <dl class="pp-facts">
         <div><dt>Runs on</dt><dd>Apple silicon · NVIDIA RTX 30, 40 and 50</dd></div>
         <div><dt>Models</dt><dd>Llama 3 · Qwen 2.5, 3 and 3.5 · Mistral</dd></div>
@@ -40,21 +38,21 @@
       <a class="ark-more" href="https://larch-engine.com">larch-engine.com</a>
     </div>
     <ul class="pp-feats">
-      <li><h3>Many chats, one card</h3><p>Conversations share each step on the GPU, so one card serves sixteen at once.</p></li>
-      <li><h3>Picks up where you left off</h3><p>A finished conversation is parked, and the next turn starts from its saved state.</p></li>
+      <li><h3>Many chats at once</h3><p>Conversations share each step on the GPU, so one card serves sixteen at once.</p></li>
+      <li><h3>Resumes conversations</h3><p>A finished conversation is parked, and the next turn starts from its saved state.</p></li>
       <li><h3>Works with your tools</h3><p>Claude Code, Qwen Code and OpenCode connect to it on localhost.</p></li>
-      <li><h3>Recovers on its own</h3><p>Run under <code>larch supervise</code>, it restarts after a GPU fault and the chat resumes where it stopped.</p></li>
+      <li><h3>Restarts after GPU faults</h3><p>Run under <code>larch supervise</code>, it restarts after a GPU fault and the chat resumes where it stopped.</p></li>
     </ul>
   </div>
 </section>
 <section class="ark-section pp" id="agent" aria-labelledby="agent-title">
   <div class="pp-grid">
     <div class="pp-intro">
-      <span class="kind">Personal agent</span>
-      <h2 id="agent-title">Larch</h2>
-      <p class="lede">The agent. It lives on your computer and knows the difference between reading and spending.</p>
+      <span class="kind">Built into Larch</span>
+      <h2 id="agent-title">The built-in agent</h2>
+      <p class="lede">The agent that comes with Larch. It asks before it spends money, and after reading anything untrusted it asks before every write.</p>
       <dl class="pp-facts">
-        <div><dt>Runs on</dt><dd>The Larch engine, on your own machine</dd></div>
+        <div><dt>Runs on</dt><dd>Built into the engine, on your own machine</dd></div>
         <div><dt>Skills</dt><dd><code>ask_docs</code> · <code>web_answer</code> · <code>read_papers</code> · <code>research</code></dd></div>
         <div><dt>Connects</dt><dd>As an MCP server, for your other tools</dd></div>
         <div><dt>Measured</dt><dd>Wrong tool 2.5 % of the time with Qwen3-8B</dd></div>
@@ -71,19 +69,19 @@
 <section class="ark-section" id="follow" aria-labelledby="follow-title">
   <div class="register">
     <div>
-      <div class="ark-eyebrow">IN THE OPEN</div>
-      <h2 id="follow-title">Follow the project.</h2>
-      <p class="lede">The code, the benchmarks and the results that did not hold up all land on GitHub first. Star it to watch the work as it happens, or leave an email for release notes.</p>
+      <div class="ark-eyebrow">UPDATES</div>
+      <h2 id="follow-title">Follow the project</h2>
+      <p class="lede">The code and benchmarks are on GitHub, including results that didn't hold up. Star the repository to follow changes, or sign up for release emails.</p>
     </div>
     <div class="follow-ways">
       <div class="follow-way">
         <h3>Star on GitHub</h3>
-        <p>Every change, issue and benchmark, as it happens.</p>
+        <p>Every change, issue and benchmark.</p>
         <a class="btn" href="https://github.com/arkaya-labs">Star on GitHub<svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.5 5.3 5.8.7-4.3 4 1.1 5.7L12 16.5l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z"/></svg></a>
       </div>
       <form class="signup follow-way" id="signup" novalidate data-endpoint="">
         <h3>Get release notes</h3>
-        <p>One short email when something is released, and nothing else.</p>
+        <p>One short email per release. Nothing else.</p>
         <label for="su-email">Email</label>
         <input id="su-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
         <button class="btn ghost" type="submit" id="su-btn">Get release notes</button>

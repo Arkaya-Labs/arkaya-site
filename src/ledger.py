@@ -97,18 +97,18 @@ def ledger():
     return f'''<section class="ark-section ledger" id="ledger" aria-labelledby="ledger-title">
   <div class="ark-head">
     <div class="ark-eyebrow">EVERY PUBLISHED NUMBER</div>
-    <h2 id="ledger-title">The ledger.</h2>
-    <p class="lede">Against llama.cpp, Ollama, vLLM and MLX, on machines people actually own. A row says so when the other engine ran different weights. Losses stay in, and a number is never edited once it goes up.</p>
+    <h2 id="ledger-title">All benchmark results</h2>
+    <p class="lede">Every result we've published against llama.cpp, Ollama, vLLM and MLX, on consumer hardware. A row says so when the other engine used different weights. Results where Larch is slower are included, and published numbers are never edited.</p>
   </div>
   <div class="lg">
     <div class="lg-group">
-      <div class="lg-gh"><h3>The Larch engine</h3><p>Difference from the engine named on each row. Right of centre is better for Larch.</p>
+      <div class="lg-gh"><h3>Speed and throughput</h3><p>Difference from the engine named on each row. Right of centre is better for Larch.</p>
         <div class="lg-legend"><span><i class="sw win"></i>Larch ahead</span><span><i class="sw loss"></i>Larch behind</span><span><i class="sw lead"></i>range across concurrency</span></div></div>
       <div class="lg-plot">{grid()}{eng}</div>
       {axis_row()}
     </div>
     <div class="lg-group">
-      <div class="lg-gh"><h3>Larch, the agent</h3><p>Wrong tool chosen over 200 prompts. Shorter is better.</p></div>
+      <div class="lg-gh"><h3>Tool choice</h3><p>Wrong tool chosen over 200 prompts. Shorter is better.</p></div>
       <div class="lg-plot plain">{agent_rows()}</div>
     </div>
     <div class="lg-group">
