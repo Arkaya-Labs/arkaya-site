@@ -13,9 +13,9 @@ read = lambda p: open(os.path.join(HERE, p), encoding="utf-8").read()
 PAGES = {
     # file: (painting, title, description, nav key)
     "index.html": ("paro", "Arkaya Labs: the local AI lab behind Larch",
-                   "Arkaya Labs is a small research lab building Larch, an open-source AI engine with a built-in agent that runs on your own Mac.", "home"),
+                   "Arkaya Labs is a small research lab building Larch, an open-source AI engine with a built-in agent that runs on your own Mac or PC.", "home"),
     "projects.html": ("ellora", "Larch: local AI engine with a built-in agent | Arkaya Labs",
-                      "Larch is an open-source AI engine with a built-in agent. It installs on Apple silicon Macs today, with NVIDIA RTX on Windows and Linux coming soon. Apache 2.0.", "projects"),
+                      "Larch is an open-source AI engine with a built-in agent, for macOS, Windows and Linux: Apple silicon Macs and PCs with NVIDIA RTX GPUs. Apache 2.0.", "projects"),
     "research.html": ("delphi", "Local LLM inference benchmarks | Arkaya Labs",
                       "Benchmarks of Larch against llama.cpp, Ollama, MLX and vLLM on consumer GPUs and Apple silicon, including the results where Larch is slower.", "research"),
     "about.html": ("chittor", "About Arkaya Labs",
