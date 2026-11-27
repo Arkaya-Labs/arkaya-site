@@ -13,9 +13,9 @@ read = lambda p: open(os.path.join(HERE, p), encoding="utf-8").read()
 PAGES = {
     # file: (painting, title, description, nav key)
     "index.html": ("paro", "Arkaya Labs: the local AI lab behind Larch",
-                   "Arkaya Labs is a small research lab building Larch, an open-source AI engine with a built-in agent that runs on your own Mac or PC.", "home"),
+                   "Arkaya Labs is a small research lab building Larch, an open-source AI engine with a built-in agent that runs on your own Mac.", "home"),
     "projects.html": ("ellora", "Larch: local AI engine with a built-in agent | Arkaya Labs",
-                      "Larch is an open-source AI engine with a built-in agent. It runs open models on Apple silicon and NVIDIA RTX GPUs. Apache 2.0.", "projects"),
+                      "Larch is an open-source AI engine with a built-in agent. It installs on Apple silicon Macs today, with NVIDIA RTX on Windows and Linux coming soon. Apache 2.0.", "projects"),
     "research.html": ("delphi", "Local LLM inference benchmarks | Arkaya Labs",
                       "Benchmarks of Larch against llama.cpp, Ollama, MLX and vLLM on consumer GPUs and Apple silicon, including the results where Larch is slower.", "research"),
     "about.html": ("chittor", "About Arkaya Labs",
@@ -46,7 +46,7 @@ CANON = {"index.html": "https://arkaya-labs.com/", "projects.html": "https://ark
          "research.html": "https://arkaya-labs.com/research", "about.html": "https://arkaya-labs.com/about"}
 ORG_LD = ('{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://arkaya-labs.com/#org",'
           '"name":"Arkaya Labs","url":"https://arkaya-labs.com/","logo":"https://arkaya-labs.com/assets/mark.svg",'
-          '"email":"hello@arkaya-labs.com","sameAs":["https://github.com/arkaya-labs"]},'
+          '"email":"hello@arkaya-labs.com","sameAs":["https://github.com/Arkaya-Labs/Larch","https://github.com/arkaya-labs"]},'
           '{"@type":"WebSite","@id":"https://arkaya-labs.com/#site","url":"https://arkaya-labs.com/","name":"Arkaya Labs",'
           '"publisher":{"@id":"https://arkaya-labs.com/#org"}}]}')
 
@@ -80,7 +80,7 @@ def imprint(name):
     place = PAINTINGS[name][0]
     return ('<footer class="ark-imprint">\n'
             '  <a href="projects.html">Projects</a><a href="research.html">Research</a><a href="about.html">About</a><a href="projects.html#follow">Follow the project</a>'
-            '<a href="https://larch-engine.com">Get Larch</a><a href="https://github.com/arkaya-labs">GitHub</a><a href="mailto:hello@arkaya-labs.com">hello@arkaya-labs.com</a>\n'
+            '<a href="https://larch-engine.com">Get Larch</a><a href="https://github.com/Arkaya-Labs/Larch">GitHub</a><a href="mailto:hello@arkaya-labs.com">hello@arkaya-labs.com</a>\n'
             f'  <p class="fine">Copyright 2026 the Arkaya Labs authors · Painting: {place}.</p>\n'
             '</footer>')
 

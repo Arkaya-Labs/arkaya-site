@@ -2,20 +2,20 @@
   <div class="ark-hero-main">
     <div class="ark-eyebrow">PROJECTS</div>
     <h1>Larch</h1>
-    <p class="ark-intro">Larch is an AI engine with a built-in agent. It runs open models on your own computer, works offline and needs no account. It is open source under Apache 2.0.</p>
+    <p class="ark-intro">Larch is an AI engine with a built-in agent. It runs open models on your own Mac, works offline and needs no account, and it is open source under Apache&nbsp;2.0. Windows and Linux builds are coming soon.</p>
     <div class="ark-cta"><a class="btn" href="https://larch-engine.com">Get Larch<svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.2c4.4-.3 9-.3 13.8 0"/><path d="M13.6 7.4c1.4 1.9 3 3.5 4.9 4.8-1.9 1.2-3.5 2.8-4.9 4.6"/></svg></a><a class="btn ghost" href="research.html#ledger">See the benchmarks</a></div>
   </div>
 </section>
 <section class="ark-section first pp-glance" aria-label="Larch at a glance">
   <div class="pp-trio">
     <a class="pp-card" href="#engine">
-      <span class="kind">Larch</span>
+      <span class="kind">Runs the models</span>
       <h2>The engine</h2>
       <p>Runs open models on the GPU you have, many conversations at once from one card.</p>
       <span class="pp-go">The engine<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.2c4.4-.3 9-.3 13.8 0"/><path d="M13.6 7.4c1.4 1.9 3 3.5 4.9 4.8-1.9 1.2-3.5 2.8-4.9 4.6"/></svg></span>
     </a>
     <a class="pp-card" href="#agent">
-      <span class="kind">Built into Larch</span>
+      <span class="kind">Does the work</span>
       <h2>The agent</h2>
       <p>Lives on your computer, shows its sources, and asks before anything leaves it.</p>
       <span class="pp-go">The agent<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.2c4.4-.3 9-.3 13.8 0"/><path d="M13.6 7.4c1.4 1.9 3 3.5 4.9 4.8-1.9 1.2-3.5 2.8-4.9 4.6"/></svg></span>
@@ -25,14 +25,14 @@
 <section class="ark-section pp" id="engine" aria-labelledby="engine-title">
   <div class="pp-grid">
     <div class="pp-intro">
-      <span class="kind">Larch</span>
+      <span class="kind">Runs the models</span>
       <h2 id="engine-title">The engine</h2>
       <p class="lede">Serves open models from your own GPU. Nothing leaves the machine unless you send it.</p>
       <dl class="pp-facts">
-        <div><dt>Runs on</dt><dd>Apple silicon · NVIDIA RTX 30, 40 and 50</dd></div>
+        <div><dt>Runs on</dt><dd>Apple silicon Macs today · NVIDIA RTX 30, 40 and 50 on Windows and Linux coming soon</dd></div>
         <div><dt>Models</dt><dd>Llama 3 · Qwen 2.5, 3 and 3.5 · Mistral</dd></div>
         <div><dt>Serves</dt><dd><code>/v1/chat/completions</code> · <code>/v1/messages</code></dd></div>
-        <div><dt>Checked</dt><dd>Same top token as llama.cpp, 99 % of the time or better</dd></div>
+        <div><dt>Checked</dt><dd>Same top token as llama.cpp on the same file at least 99 % of the time, with a bounded KL divergence, in four modes</dd></div>
       </dl>
       <a class="ark-more" href="research.html#ledger">Measured results</a>
       <a class="ark-more" href="https://larch-engine.com">larch-engine.com</a>
@@ -48,13 +48,14 @@
 <section class="ark-section pp" id="agent" aria-labelledby="agent-title">
   <div class="pp-grid">
     <div class="pp-intro">
-      <span class="kind">Built into Larch</span>
+      <span class="kind">Does the work</span>
       <h2 id="agent-title">The built-in agent</h2>
       <p class="lede">The agent that comes with Larch. It asks before it spends money, and after reading anything untrusted it asks before every write.</p>
       <dl class="pp-facts">
         <div><dt>Runs on</dt><dd>Built into the engine, on your own machine</dd></div>
         <div><dt>Skills</dt><dd><code>ask_docs</code> · <code>web_answer</code> · <code>read_papers</code> · <code>research</code></dd></div>
         <div><dt>Connects</dt><dd>As an MCP server, for your other tools</dd></div>
+        <div><dt>Permissions</dt><dd>Four classes: <code>Read</code>, <code>WriteLocal</code>, <code>WriteExternal</code>, <code>Spend</code></dd></div>
         <div><dt>Measured</dt><dd>Wrong tool 2.5 % of the time with Qwen3-8B</dd></div>
       </dl>
     </div>
@@ -77,7 +78,7 @@
       <div class="follow-way">
         <h3>Star on GitHub</h3>
         <p>Every change, issue and benchmark.</p>
-        <a class="btn" href="https://github.com/arkaya-labs">Star on GitHub<svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.5 5.3 5.8.7-4.3 4 1.1 5.7L12 16.5l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z"/></svg></a>
+        <a class="btn" href="https://github.com/Arkaya-Labs/Larch">Star on GitHub<svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.5 5.3 5.8.7-4.3 4 1.1 5.7L12 16.5l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z"/></svg></a>
       </div>
       <form class="signup follow-way" id="signup" novalidate data-endpoint="">
         <h3>Get release notes</h3>

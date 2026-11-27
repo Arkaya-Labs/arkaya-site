@@ -22,9 +22,18 @@
   </div>
   <h3>Latest</h3>
   <article class="note">
-    <span class="when">1 Nov 2026 · Engine</span>
-    <div><h4>Qwen 3.5 35B on an Apple M5: Larch vs Ollama and MLX</h4><p>Qwen 3.5 35B on a 24 GB M5, from one to eight chats at once, against Ollama and MLX. One short prompt, one run at each count.</p><p class="take">At eight chats, 123 tokens per second against Ollama's 47, which runs this model one chat at a time. MLX is still 15 to 34 % ahead.</p></div>
+    <span class="when">27 Nov 2026 · Engine</span>
+    <div><h4>Qwen 3.5 35B on a 16 GB RTX 5070 Ti: Larch vs llama.cpp</h4><p>The 35B mixture-of-experts model on a card too small to hold it, at 1, 4, 8 and 16 chats, against llama.cpp on the same file.</p><p class="take">Ahead with one chat (+4.3 %), behind at 4 and 8 chats (−5.7 % and −19.9 %). At 16 chats there is no fair comparison yet.</p></div>
   </article>
+  <article class="note">
+    <span class="when">25 Nov 2026 · Engine</span>
+    <div><h4>Larch vs llama.cpp, Ollama and vLLM on an RTX 5070 Ti: November rerun</h4><p>A fresh sweep against the newest llama.cpp, Ollama and vLLM releases, on Llama 3.1 8B and Qwen 2.5 7B, with the parity check first.</p><p class="take">17 to 36 % ahead of llama.cpp and 46 to 76 % ahead of Ollama at 8 and 16 chats. Behind llama.cpp on first token with one chat, and 6 to 11 % behind vLLM on its own AWQ weights.</p></div>
+  </article>
+  <article class="note">
+    <span class="when">1 Nov 2026 · Engine</span>
+    <div><h4>Qwen 3.5 35B on an Apple M5: Larch vs Ollama and MLX</h4><p>Qwen 3.5 35B on a 24 GB M5, from one to eight chats at once, against Ollama and MLX. One short prompt, one run at each count.</p><p class="take">At eight chats, 123 tokens per second against Ollama's 47, which runs this model one chat at a time. MLX is still 15 to 34 % ahead.</p><p class="take">Superseded: newer Ollama releases run this model with several chats at once, so the Ollama gap no longer holds.</p></div>
+  </article>
+  <h3>Earlier</h3>
   <article class="note">
     <span class="when">23 Oct 2026 · Engine</span>
     <div><h4>Larch vs vLLM on an RTX 5070 Ti</h4><p>A data-centre engine on a gaming GPU: where its AWQ path wins on throughput, where GGUF loading does not, and why the comparison is not like for like.</p><p class="take">Behind on throughput, the gap closing as concurrency rises; ahead on first token.</p></div>
@@ -33,7 +42,6 @@
     <span class="when">17 Oct 2026 · Engine</span>
     <div><h4>16 chats on one RTX 5070 Ti: Larch vs llama.cpp and Ollama</h4><p>One consumer GPU serving sixteen conversations, measured against llama.cpp and Ollama on the same files, with the parity check first.</p><p class="take">With eight or more chats the shared step wins; alone, llama.cpp still does.</p></div>
   </article>
-  <h3>Earlier</h3>
   <article class="note">
     <span class="when">16 Oct 2026 · Agent</span>
     <div><h4>Tool-choice accuracy: three routing methods on two 8B models</h4><p>Three routers for the same decision: the model alone, a logprob gate, a hidden-state probe. Wrong-tool rate over 200 prompts on two models.</p><p class="take">Qwen3-8B chose the wrong tool 2.5 % of the time; Llama 3.1 8B, 24 %. The model mattered more than the router.</p></div>
