@@ -22,10 +22,24 @@ ENGINE = [
     ("17 Oct 2026", "Aggregate tokens/s, 8 and 16 chats", "Ollama 0.40.1", "RTX 5070 Ti", 20, 49, "+20 to +49 %", "20 % to 49 % more tokens per second at 8 and 16 chats."),
     ("23 Oct 2026", "Aggregate tokens/s, 4, 8 and 16 chats", "vLLM, AWQ weights", "RTX 5070 Ti", -5.9, -16.8, "−5.9 to −16.8 %", "−16.8 % at 4 chats, −10.5 % at 8, −5.9 % at 16: the gap closes as concurrency rises."),
     ("23 Oct 2026", "Time to first token, p50", "vLLM, AWQ weights", "RTX 5070 Ti", 31, 31, "up to 31 % lower", "Median time to first token up to 31 % lower."),
-    ("1 Nov 2026", "Total tokens/s, 1 to 8 chats, Qwen 3.5 35B", "Ollama 0.40.3", "Apple M5, 24 GB", 13.3, 160, "+13 % to 2.6×",
-     "56 against 50 tokens per second with one chat, 123 against 47 with eight. Ollama runs this model one chat at a time, so its total stays flat. One short prompt, one run at each count."),
+    ("1 Nov 2026", "Total tokens/s, 1 to 8 chats, Qwen 3.5 35B (superseded)", "Ollama 0.40.3", "Apple M5, 24 GB", 13.3, 160, "+13 % to 2.6×",
+     "56 against 50 tokens per second with one chat, 123 against 47 with eight. Ollama 0.40.3 ran this model one chat at a time, so its total stayed flat. One short prompt, one run at each count. Superseded: newer Ollama releases run this model with several chats at once, so this gap no longer holds."),
     ("1 Nov 2026", "Total tokens/s, 1 to 8 chats, Qwen 3.5 35B", "MLX, its own 3-bit weights", "Apple M5, 24 GB", -15.2, -33.9, "−15 to −34 %",
      "56 against 66 tokens per second with one chat, 123 against 160 with eight. MLX ran its own 3-bit weights, not the same file. One short prompt, one run at each count."),
+    ("25 Nov 2026", "Aggregate tokens/s, 8 and 16 chats, Llama 3.1 8B and Qwen 2.5 7B", "llama.cpp b12723", "RTX 5070 Ti", 17.1, 35.7, "+17 to +36 %",
+     "+17.2 % and +17.1 % at 8 chats, +31.3 % and +35.7 % at 16, on the same GGUF files. Within noise with one chat."),
+    ("25 Nov 2026", "Time to first token, p99, one chat", "llama.cpp b12723", "RTX 5070 Ti", -33.2, -35.4, "33–35 % higher",
+     "Tail time to first token 33 to 35 % higher with one chat, on both models."),
+    ("25 Nov 2026", "Fixed pp512/tg128, 8 and 16 sequences", "llama.cpp b12723", "RTX 5070 Ti", -10, -16, "−10 to −16 %",
+     "In llama.cpp's own fixed shape, 10 to 16 % slower at 8 and 16 sequences. Within noise at 1 and 4."),
+    ("25 Nov 2026", "Aggregate tokens/s, 8 and 16 chats", "Ollama 0.40.18", "RTX 5070 Ti", 46, 76, "+46 to +76 %",
+     "46 to 76 % more tokens per second at 8 and 16 chats on both models, over localhost HTTP. Within noise with one chat."),
+    ("25 Nov 2026", "Aggregate tokens/s, multi-turn chats at 4 and 8", "vLLM 0.34.0, AWQ weights", "RTX 5070 Ti", -6.2, -10.6, "−6 to −11 %",
+     "−6.2 % at 4 chats and −10.6 % at 8. vLLM ran AWQ INT4 weights, not the same file."),
+    ("27 Nov 2026", "Aggregate tokens/s, one chat, Qwen 3.5 35B", "llama.cpp b12723", "RTX 5070 Ti", 4.3, 4.3, "+4.3 %",
+     "136.0 against 130.4 tokens per second, llama.cpp with --n-cpu-moe 3. Tail time to first token is 36 % higher."),
+    ("27 Nov 2026", "Aggregate tokens/s, 4 and 8 chats, Qwen 3.5 35B", "llama.cpp b12723", "RTX 5070 Ti", -5.7, -19.9, "−6 to −20 %",
+     "246.0 against 260.9 tokens per second at 4 chats and 246.1 against 307.2 at 8, llama.cpp with --n-cpu-moe 3."),
 ]
 
 AGENT = [  # wrong tool chosen over 200 prompts, lower is better
@@ -97,18 +111,18 @@ def ledger():
     return f'''<section class="ark-section ledger" id="ledger" aria-labelledby="ledger-title">
   <div class="ark-head">
     <div class="ark-eyebrow">EVERY PUBLISHED NUMBER</div>
-    <h2 id="ledger-title">The ledger.</h2>
-    <p class="lede">Against llama.cpp, Ollama, vLLM and MLX, on machines people actually own. A row says so when the other engine ran different weights. Losses stay in, and a number is never edited once it goes up.</p>
+    <h2 id="ledger-title">All benchmark results</h2>
+    <p class="lede">Every result we've published against llama.cpp, Ollama, vLLM and MLX, on consumer hardware. A row says so when the other engine used different weights. Results where Larch is slower are included, and published numbers are never edited.</p>
   </div>
   <div class="lg">
     <div class="lg-group">
-      <div class="lg-gh"><h3>The Larch engine</h3><p>Difference from the engine named on each row. Right of centre is better for Larch.</p>
+      <div class="lg-gh"><h3>Speed and throughput</h3><p>Difference from the engine named on each row. Right of centre is better for Larch.</p>
         <div class="lg-legend"><span><i class="sw win"></i>Larch ahead</span><span><i class="sw loss"></i>Larch behind</span><span><i class="sw lead"></i>range across concurrency</span></div></div>
       <div class="lg-plot">{grid()}{eng}</div>
       {axis_row()}
     </div>
     <div class="lg-group">
-      <div class="lg-gh"><h3>Larch, the agent</h3><p>Wrong tool chosen over 200 prompts. Shorter is better.</p></div>
+      <div class="lg-gh"><h3>Tool choice</h3><p>Wrong tool chosen over 200 prompts. Shorter is better.</p></div>
       <div class="lg-plot plain">{agent_rows()}</div>
     </div>
     <div class="lg-group">

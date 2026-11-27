@@ -78,6 +78,15 @@ HTML directly also works, but the next build overwrites it.
   clipped with a break mark and labelled in words. Blue = ahead, lotus pink = behind (checked for colour-blind
   separation in both modes). The exact numbers are under "Show the numbers as a table".
 
+## Search and AI crawlers
+
+- Each page's `<head>` (from `src/build.py`) carries a canonical URL, Open Graph and Twitter card tags, and an
+  Organization/WebSite JSON-LD block. Titles and descriptions are in `PAGES`, canonical URLs in `CANON`.
+- Social cards are `assets/og/<painting>.jpg`, 1200 × 630 centre crops of each page's day painting.
+- `robots.txt` allows every crawler, naming the AI search crawlers explicitly. `sitemap.xml` lists the four pages:
+  update its `lastmod` dates when a page changes. `llms.txt` is a short plain-text summary for AI tools.
+- Larch is one product: an AI engine with a built-in agent. Don't present "Larch engine" and "Larch" as two products.
+
 ## Swapping paintings
 
 Put `<name>.webp` (day) and `<name>.night.webp` (night) in `assets/` at the same size, plus half-width
@@ -145,5 +154,5 @@ readable, and Condense/Expand moves under the picture. The five tabs stay on one
   stays there, moving or not, so the links never sit on the text under them; it fades away back at the top (`site.js`).
   It used to fade 0.7 s after scrolling stopped, which left the links overlapping the page text whenever it was idle.
 
-- Home hero buttons: "Follow the project" (to the end of the Projects page) and "Explore the research". The demo carousel
+- Home hero buttons: "Get Larch" (to larch-engine.com) and "Read the research". The demo carousel
   has no Pause motion button; it still stops for keyboard focus and reduced motion.

@@ -1,0 +1,16 @@
+# Arkaya Labs
+
+> Arkaya Labs is a small research lab. It builds Larch, an open-source AI engine with a
+> built-in agent that runs open models on your own Mac (Apache 2.0; Windows and Linux
+> coming soon). Arkaya Labs
+> benchmarks Larch against llama.cpp, Ollama, MLX and vLLM on consumer hardware and
+> publishes every result, including the ones where Larch is slower.
+
+## Pages
+- [Larch](https://arkaya-labs.com/projects): what Larch is, the engine and its built-in agent
+- [Research](https://arkaya-labs.com/research): research notes and every benchmark result
+- [About](https://arkaya-labs.com/about): the lab, its mission and its engineering rules
+
+## Elsewhere
+- [larch-engine.com](https://larch-engine.com/): install Larch
+- [GitHub](https://github.com/Arkaya-Labs/Larch): source code and benchmark scripts
