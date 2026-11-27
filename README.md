@@ -136,6 +136,13 @@ reachable in the test environment, so the screenshots used fallback fonts.
 The bar has three links, Projects, Research and About, plus the sun/moon switch. The Arkaya Labs mark goes home. On
 phones narrower than 400 px the wordmark shortens to "Arkaya", and below 340 px to the mark alone, so the bar fits.
 
+## The stack diagram (Research)
+
+`src/partials/stack.html`. Its viewBox (720 × 612) holds the whole picture fully expanded, including the bottom
+layer's edge, which reaches y ≈ 601. Nothing may draw below it: the tabs sit right under the figure in the one-column
+layout, and a slab that spills over runs into them. On phones the layer labels are drawn larger so they stay
+readable, and Condense/Expand moves under the picture. The five tabs stay on one line at every width.
+
 ## Performance on modest machines
 
 - The sun/moon switch uses View Transitions where the browser has them (Chrome, Edge, Safari 18+, recent
@@ -143,8 +150,9 @@ phones narrower than 400 px the wordmark shortens to "Arkaya", and below 340 px 
   live. Older browsers fall back to the CSS fade on `--dusk`.
 - The background paintings have their blur baked into `*.small.webp` (no live CSS blur), the backdrop sits on its
   own GPU layer, and there is no frosted-glass blur under the header or the ledger panel.
-- The top bar has no band at rest: a soft veil appears behind the nav only while the page is scrolling and fades
-  0.7 s after it stops (the delay is in `site.js`).
+- The top bar has no band at the top of the page. Once the page is scrolled down, a soft veil sits behind the nav and
+  stays there, moving or not, so the links never sit on the text under them; it fades away back at the top (`site.js`).
+  It used to fade 0.7 s after scrolling stopped, which left the links overlapping the page text whenever it was idle.
 
 - Home hero buttons: "Get Larch" (to larch-engine.com) and "Read the research". The demo carousel
   has no Pause motion button; it still stops for keyboard focus and reduced motion.
